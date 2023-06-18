@@ -1,3 +1,6 @@
+// GA
+import GoogleAnalytics from "./GoogleAnalytics";
+
 // Google Fonts
 import { Allura, Lora } from "next/font/google";
 
@@ -18,7 +21,6 @@ const lora = Lora({
   subsets: ["latin"],
   variable: "--lora",
   preload: true,
-  
 });
 
 const allura = Allura({
@@ -36,6 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <GoogleAnalytics />
       <MenuContextProvider>
         <body className={`${lora.variable} ${allura.variable}`}>
           <Menu />
