@@ -1,0 +1,83 @@
+$spacer: #{fluid(20px, 50px)};
+
+.experiences {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include edge-padding;
+  padding-bottom: 8rem;
+
+  &__cta {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+  }
+
+  &__icon {
+    max-width: #{fluid(128px, 170px)};
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: #{fluid(15px, 30px)};
+  }
+
+  &__scroll {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &-text {
+      font-size: #{fluid(18px, 22px)};
+    }
+
+    &-icon {
+      animation: floatUpDown 2s ease-in-out 0s infinite alternate forwards;
+    }
+  }
+
+  &__services {
+    display: flex;
+    flex-direction: row;
+    gap: $spacer;
+    margin-bottom: 30px;
+    justify-content: center;
+
+    @include laptop {
+      flex-direction: column;
+    }
+
+    &-col {
+      width: calc(100% / 3 - $spacer);
+
+      @include laptop {
+        width: 100%;
+      }
+    }
+  }
+
+  &__title {
+    font-family: $secondary-font;
+    font-size: #{fluid(50px, 90px)};
+    text-align: center;
+    margin-bottom: #{fluid(12px, 28px)};
+    color: $secondary-color;
+
+    span {
+      color: $black;
+      font-family: $primary-font;
+      font-weight: 400;
+    }
+  }
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(13px);
+  }
+}

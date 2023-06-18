@@ -1,0 +1,135 @@
+.ExperiencesWow {
+  $wow-mw: #{fluid(1400px, 1700px)};
+  $wow-gallery-spacing: #{fluid(10px, 34px)};
+  background: $black;
+  padding-top: 85px;
+  padding-bottom: #{fluid(40px, 140px)};
+
+  &__hero {
+    @include edge-padding;
+    display: flex;
+    flex-direction: row;
+    max-width: $wow-mw;
+    margin-left: auto;
+    margin-right: auto;
+    gap: #{fluid(25px, 70px)};
+    margin-bottom: #{fluid(50px, 75px)};
+
+    @include laptop {
+      flex-direction: column;
+    }
+
+    &-image {
+      max-width: 426px;
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    &-title {
+      color: $primary-color;
+      font-size: #{fluid(45px, 190px)};
+
+      span {
+        text-decoration: underline;
+        animation: colorChange 15s ease-in-out infinite alternate;
+      }
+    }
+  }
+
+  &__lowerGallery {
+    padding-left: #{fluid(0px, 190px)};
+    display: grid;
+    grid-auto-flow: column;
+    gap: $wow-gallery-spacing;
+
+    @include laptop {
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+      flex-wrap: wrap;
+
+      img {
+        width: calc(100% / 2 - $wow-gallery-spacing);
+      }
+    }
+  }
+
+  &__mission {
+    @include edge-padding;
+    display: flex;
+    flex-direction: row;
+    max-width: $wow-mw;
+    margin-left: auto;
+    margin-right: auto;
+    gap: #{fluid(0px, 45px)};
+    width: 100%;
+    justify-content: flex-end;
+    padding-left: 210px;
+    margin-bottom: #{fluid(40px, 215px)};
+    overflow-x: hidden;
+
+    @include laptop {
+      @include edge-padding;
+      flex-direction: column;
+    }
+
+    &-col {
+      &-image {
+        max-width: 426px;
+        width: 100%;
+        border-radius: 12px;
+        margin-top: #{fluid(20px, 170px)};
+      }
+      &-svg {
+        stroke-dasharray: 100%;
+        stroke-dashoffset: 0;
+      }
+      &-text {
+        color: $primary-color;
+        font-size: #{fluid(22px, 26px)};
+        text-align: right;
+        max-width: 903px;
+        margin-left: auto;
+        margin-top: #{fluid(10px, 100px)};
+      }
+    }
+  }
+
+  &__title {
+    font-size: #{fluid(30px, 60px)};
+    font-weight: 400;
+    color: $primary-color;
+    text-align: center;
+    margin-bottom: #{fluid(15px, 70px)};
+    @include edge-padding;
+  }
+
+  &__upperGallery {
+    padding-right: #{fluid(0px, 190px)};
+    display: grid;
+    grid-auto-flow: column;
+    gap: $wow-gallery-spacing;
+    margin-bottom: $wow-gallery-spacing;
+
+    @include laptop {
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+      flex-wrap: wrap;
+
+      img {
+        width: calc(100% / 2 - $wow-gallery-spacing);
+      }
+    }
+  }
+}
+
+@keyframes colorChange {
+  to {
+    color: $secondary-color;
+  }
+
+  from {
+    color: $primary-color;
+  }
+}

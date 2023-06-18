@@ -1,0 +1,187 @@
+.StandardMenu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: $black;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  padding: #{fluid(10px, 30px)};
+  opacity: 1;
+  visibility: visible;
+  transition: 0.2s ease-in-out;
+
+  &--close {
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+  }
+
+  &__container {
+    background: $primary-color;
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+
+    @include laptop {
+      flex-direction: column;
+    }
+
+    &-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: $primary-color;
+      width: calc(100% / 2);
+      position: relative;
+
+      @include laptop {
+        width: 100%;
+        height: 40%;
+        padding: 5px;
+        border-radius: 12px;
+      }
+
+      &-btn {
+        background: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 27px;
+        right: 37px;
+
+        @include laptop {
+          top: 10px;
+          right: 10px;
+        }
+
+        &-icon {
+          margin-right: 16px;
+          width: 34px;
+
+          @include laptop {
+            width: 20px;
+            margin-right: 8px;
+          }
+        }
+
+        &-text {
+          font-family: $primary-font;
+          color: $primary-color;
+          font-size: #{fluid(20px, 30px)};
+          font-weight: 700;
+          text-decoration: underline;
+
+          @include laptop {
+            font-size: 20px;
+          }
+        }
+      }
+
+      &-logo {
+        width: #{fluid(200px, 400px)};
+        margin-bottom: 12px;
+      }
+
+      &-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: #{fluid(15px, 24px)};
+
+        &-item {
+          font-family: $primary-font;
+          color: $primary-color;
+          font-size: #{fluid(20px, 40px)};
+          font-weight: 700;
+          text-decoration: none;
+          transition: 0.2s ease-in-out;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      &--right {
+        background: #010101;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+
+        @include laptop {
+          border-radius: 11px;
+          height: 60%;
+        }
+      }
+
+      &-slogan {
+        font-size: #{fluid(18px, 30px)};
+        margin-bottom: #{fluid(24px, 54px)};
+      }
+
+      &-socials {
+        margin-top: #{fluid(30px, 85px)};
+        display: flex;
+        flex-direction: row;
+        max-width: 301px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        flex-wrap: wrap;
+
+        @include laptop {
+          max-width: 450px;
+        }
+
+        &-link {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: calc(100% / 2);
+          background: $black;
+          aspect-ratio: 1;
+
+          @include laptop {
+            width: calc(100% / 5) !important;
+            aspect-ratio: auto !important;
+            padding: 15px 2px;
+          }
+
+          &--fb {
+            background: #3b5998;
+          }
+
+          &--ig {
+            background: #962fbf;
+          }
+
+          img {
+            @include laptop {
+              height: 25px;
+            }
+          }
+
+          &--tt {
+            background: #000000;
+            width: 100%;
+            aspect-ratio: 2/1;
+          }
+
+          &--tw {
+            background: #55acee;
+          }
+
+          &--yt {
+            background: #e02f2f;
+          }
+        }
+      }
+    }
+  }
+}

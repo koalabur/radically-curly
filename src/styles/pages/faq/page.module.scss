@@ -1,0 +1,11 @@
+.FAQ {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  @include edge-padding;
+  padding-top: 7.5rem;
+  padding-bottom: 3.5rem;
+}

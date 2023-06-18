@@ -1,0 +1,84 @@
+.StandardNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px #{fluid(10px, 38px)};
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+
+  &__logo {
+    width: #{fluid(100px, 225px)};
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+
+    &:hover > &-dot:nth-child(1) {
+      animation: dotA 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) alternate infinite;
+    }
+
+    &:hover > &-dot:nth-child(2) {
+      animation: dotB 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s alternate
+        infinite;
+    }
+
+    &:hover > &-dot:nth-child(3) {
+      animation: dotB 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.45s alternate
+        infinite;
+    }
+
+    &-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: $secondary-color;
+      transform: 1s ease-in-out;
+
+      &:nth-child(2) {
+        background: $tertiary-color;
+      }
+    }
+
+    &-text {
+      font-family: $primary-font;
+      font-size: #{fluid(18px, 24px)};
+    }
+  }
+}
+
+@keyframes dotA {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes dotB {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes dotC {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}

@@ -1,0 +1,53 @@
+.StandardDivaCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+  border-radius: 12px;
+  cursor: pointer;
+  width: calc(100% / 3 - #{fluid(15px, 140px)});
+
+  @include laptop {
+    width: calc(100% / 2 - #{fluid(15px, 140px)});
+  }
+
+  &:hover > &__img,
+  &:focus > &__img {
+    --_p: 75%;
+    filter: grayscale(0%);
+  }
+
+  &__img {
+    margin-bottom: 11px;
+    padding: calc(4px + 12px);
+    --_c: #0000 0 25%, #d1232a 0 50%;
+    --_g1: repeating-linear-gradient(90deg, var(--_c)) repeat-x;
+    --_g2: repeating-linear-gradient(180deg, var(--_c)) repeat-y;
+    background: var(--_g1) var(--_p, 25%) 0, var(--_g2) 0 var(--_p, 125%),
+      var(--_g1) var(--_p, 125%) 100%, var(--_g2) 100% var(--_p, 25%);
+    background-size: 200% 12px, 12px 200%;
+    cursor: pointer;
+    filter: grayscale(20%);
+    transition: 0.3s;
+  }
+
+  &__job {
+    font-size: #{fluid(18px, 20px)};
+    margin-bottom: 7px;
+    text-align: center;
+  }
+
+  &__learn {
+    font-size: #{fluid(18px, 20px)};
+    text-decoration: underline;
+    text-align: center;
+  }
+
+  &__name {
+    font-size: #{fluid(20px, 30px)};
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+}

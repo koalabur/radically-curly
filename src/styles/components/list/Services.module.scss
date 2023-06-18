@@ -1,0 +1,43 @@
+.Services {
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__list {
+    margin-bottom: #{fluid(10px, 49px)};
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: #{fluid(10px, 20px)};
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &-line {
+        width: 100%;
+        height: 1px;
+        background: $black;
+      }
+
+      &-price {
+        font-size: #{fluid(16px, 24px)};
+      }
+
+      &-service {
+        font-size: #{fluid(14px, 20px)};
+        min-width: 90px;
+        display: inline-table;
+      }
+    }
+  }
+
+  &__title {
+    font-size: #{fluid(20px, 25px)};
+    margin-bottom: 14px;
+  }
+}

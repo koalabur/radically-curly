@@ -1,0 +1,18 @@
+.WavyAnimated {
+  width: 100%;
+  top: 0;
+  padding-bottom: 4px;
+  left: 0;
+  position: absolute;
+  z-index: 0;
+  transform: rotate(180deg) translateY(97%);
+
+  svg {
+    margin: auto;
+    background: transparent;
+    display: block;
+    z-index: 1;
+    position: relative;
+    shape-rendering: auto;
+  }
+}

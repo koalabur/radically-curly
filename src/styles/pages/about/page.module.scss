@@ -1,0 +1,11 @@
+.divas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: #{fluid(15px, 140px)};
+  justify-content: center;
+  max-width: #{fluid(1300px, 1500px)};
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 4rem;
+}

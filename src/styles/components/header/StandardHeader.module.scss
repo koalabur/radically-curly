@@ -1,0 +1,26 @@
+.StandardHeader {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: end;
+  overflow-x: hidden;
+  padding-bottom: #{fluid(30px, 150px)};
+
+  &__bg {
+    width: 100%;
+    grid-area: 1 / 1 / 2 / 2;
+    min-height: 250px;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-size: #{fluid(20px, 30px)};
+    max-width: #{fluid(600px, 1000px)};
+    margin-left: auto;
+    margin-right: auto;
+    grid-area: 1 / 1 / 2 / 2;
+    text-align: center;
+    padding-bottom: 50px;
+    @include edge-padding;
+  }
+}
