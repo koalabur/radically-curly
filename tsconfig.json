@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "__tests__/index.test.js", "__tests__/components/form/ContactForm.test.ts", "__tests__/components/ui/Anchor.test.js"],
   "exclude": ["node_modules"]
 }
