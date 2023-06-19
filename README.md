@@ -6,6 +6,8 @@
 
 ![alt text](https://lh6.googleusercontent.com/FU5h_Q0As38kMoqvxtWEmzK10JkainV6PdkepauYdChfg4V_vFi4qpqc-hQnAch1PsU=w2400 "Contentful") [Contentful](https://www.contentful.com/)
 
+![alt text](https://lh3.googleusercontent.com/drive-viewer/AFGJ81pvppyPJ-lN9CFdE3uiEtfjRRWUgXrcDxhMklqj69zMJ1LQO-LkI-N5L2DKmB7WCCrZS6cu_JKeLqgRZAvPYj-7NPE8=s2560 "Jest") [Jest](https://jestjs.io/)
+
 ![alt text](https://lh3.googleusercontent.com/P-ZUEk2nqRdojQZXEDr72g-2z92yxlwHwdfjYo2A_eu10pr6GjtmnftRKG3JSOcphV8=w2400 "Vercel") [Vercel](https://vercel.com/)
 
 ---
