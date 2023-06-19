@@ -1,5 +1,8 @@
 "use client";
 
+// Documentation:
+// Standard contact form using https://formspree.io/
+
 // FormSpree
 import { useForm, ValidationError } from "@formspree/react";
 

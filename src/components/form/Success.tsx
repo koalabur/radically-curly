@@ -1,5 +1,8 @@
 "use client";
 
+// Documentation:
+// Will replace the form when the user submits successfully.
+
 // Styles
 import styles from "@/styles/components/form/Success.module.scss";
 

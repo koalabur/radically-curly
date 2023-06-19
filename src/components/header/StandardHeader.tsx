@@ -1,3 +1,7 @@
+// Documentation:
+// Header for any page that needs it. Can be server-side since there
+// is no functionality behind it.
+
 // Next
 import Image from "next/image";
 

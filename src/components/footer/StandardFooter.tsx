@@ -1,3 +1,7 @@
+// Documentation:
+// Standard footer. Currently an issue with Contentful so everything
+// is hard coded. Will revisit to implmenet Contentful later.
+
 // Next
 import Image from "next/image";
 import Link from "next/link";

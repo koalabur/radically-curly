@@ -1,5 +1,8 @@
 "use client";
 
+// Documentation:
+// Your average "as seen in" section.
+
 // Next
 import Image from "next/image";
 import Link from "next/link";
