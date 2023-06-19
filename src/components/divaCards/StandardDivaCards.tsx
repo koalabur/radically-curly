@@ -1,5 +1,9 @@
 "use client";
 
+// Documentation:
+// Displays the divas/ employees on the experiences page.
+// Modal is controlled by <DivaModal />.
+
 // Next
 import Image from "next/image";
 

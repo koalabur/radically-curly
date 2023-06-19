@@ -1,5 +1,9 @@
 "use client";
 
+// Documentation:
+// Used to display the services on the experiences page.
+// Also has cool GSAP stuff too.
+
 // React
 import { useEffect, useLayoutEffect, useRef } from "react";
 import PropTypes from "prop-types";

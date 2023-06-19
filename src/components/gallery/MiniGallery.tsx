@@ -1,5 +1,8 @@
 "use client";
 
+// Documentation:
+// Mini gallery for the experiences page.
+
 // Next
 import Image from "next/image";
 

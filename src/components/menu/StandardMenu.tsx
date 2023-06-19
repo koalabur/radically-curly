@@ -1,5 +1,8 @@
 "use client";
 
+// Documentation:
+// Menu for the site. Menu is triggered from the nav.
+
 // Next
 import Image from "next/image";
 import Link from "next/link";

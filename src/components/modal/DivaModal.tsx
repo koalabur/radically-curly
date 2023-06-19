@@ -1,5 +1,8 @@
 "use client";
 
+// Documentation:
+// Modal for the divaCards > StandardDivaCards.tsx
+
 // Next
 import Image from "next/image";
 

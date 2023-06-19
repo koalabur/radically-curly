@@ -1,4 +1,7 @@
 "use client";
+// Documentation:
+// This is the nav on the top of every page. It is not the menu.
+// The menu is inside of the "menu" folder.
 
 // React
 import React, { useContext } from "react";
