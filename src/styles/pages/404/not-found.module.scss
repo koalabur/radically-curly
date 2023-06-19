@@ -1,0 +1,28 @@
+.NotFound {
+  @include edge-padding;
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__bunny {
+    margin-bottom: 15px;
+    max-width: #{fluid(300px, 550px)};
+  }
+
+  &__link {
+    font-size: #{fluid(16px, 24px)};
+    color: $secondary-color;
+    font-weight: 700;
+  }
+
+  &__title {
+    font-size: #{fluid(24px, 36px)};
+    margin-bottom: 10px;
+  }
+}
