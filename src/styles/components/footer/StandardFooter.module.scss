@@ -49,29 +49,6 @@
         width: 100%;
       }
 
-      &-item {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        margin-bottom: 20px;
-
-        &-icon {
-          margin-right: 10px;
-          min-width: 20px;
-        }
-
-        &-text {
-          font-family: $primary-font;
-          font-size: #{fluid(16px, 20px)};
-          color: $primary-color;
-          white-space: pre-wrap;
-
-          a {
-            color: $primary-color;
-          }
-        }
-      }
-
       &-title {
         color: $primary-color;
         font-family: $primary-font;

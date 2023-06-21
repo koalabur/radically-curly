@@ -1,16 +1,10 @@
-// Next
-import Link from "next/link";
-import Image from "next/image";
-
-// React
-import { Fragment } from "react";
-
 // Custom Hooks
 import UseContentful from "@/hook/useContentful";
 
 // Components
 import Form from "@/components/form/ContactForm";
 import PageTitle from "@/components/ui/PageTitle";
+import StandardBusinessInfo from "@/components/businessInfo/StandardBusinessInfo";
 
 // Styles
 import styles from "@/styles/pages/contact/page.module.scss";
@@ -67,22 +61,6 @@ export default async function Contact() {
     }
   `;
 
-  const businessInfoQuery = `
-  query businessInformationEntryQuery {
-    businessInformation(id: "6HdVpQhxVZ8Rd08sSfnC9F") {
-      title
-      information
-    }
-  }
-`;
-
-  async function fetchBusinessInfoData() {
-    const result = await UseContentful(businessInfoQuery);
-    return result.data.businessInformation;
-  }
-
-  const businessInfo: BusinessInfo = await fetchBusinessInfoData();
-
   async function fetchContactPageData() {
     const result = await UseContentful(contactPageQuery);
     return result.data.contactPage;
@@ -95,46 +73,7 @@ export default async function Contact() {
       <PageTitle title="Contact Us" />
       <section className={styles.contact}>
         <div className={styles.contact__info}>
-          <h2 className={styles["contact__info-title"]}>
-            {businessInfo.title}
-          </h2>
-          {businessInfo.information.map((item, index) => (
-            <Fragment key={index}>
-              <div className={styles["contact__info-item"]}>
-                <Image
-                  className={styles["contact__info-item-icon"]}
-                  alt={item.iconTitle}
-                  width={item.iconWidth}
-                  height={item.iconHeight}
-                  src={item.icon}
-                />
-                {item.link ? (
-                  <>
-                    {item.content2 && (
-                      <p className={styles["contact__info-item-text"]}>
-                        <Link href={item.link}>{item.content}</Link>
-                        <br />
-                        <i>{item.content2}</i>
-                      </p>
-                    )}
-                    {!item.content2 && (
-                      <Link
-                        className={styles["contact__info-item-text"]}
-                        href={item.link}
-                        target={item.newTab ? "_blank" : "_self"}
-                      >
-                        {item.content}
-                      </Link>
-                    )}
-                  </>
-                ) : (
-                  <p className={styles["contact__info-item-text"]}>
-                    {item.content}
-                  </p>
-                )}
-              </div>
-            </Fragment>
-          ))}
+          <StandardBusinessInfo styling="page" />
         </div>
         <div className={styles.contact__form}>
           <p className={styles["contact__form-header"]}>

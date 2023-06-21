@@ -6,36 +6,15 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// React
-import { Fragment } from "react";
-
-// Hooks
-import UseContentful from "@/hook/useContentful";
-
 // Components
 import Anchor from "../ui/Anchor";
 import TransparentWavy from "../shapeDivider/WavyAnimated";
 
 // Styles
 import styles from "@/styles/components/footer/StandardFooter.module.scss";
+import StandardBusinessInfo from "../businessInfo/StandardBusinessInfo";
 
 export default async function StandardFooter() {
-  const businessInfoQuery = `
-    query businessInformationEntryQuery {
-      businessInformation(id: "6HdVpQhxVZ8Rd08sSfnC9F") {
-        title
-        information
-      }
-    }
-  `;
-
-  async function fetchBusinessInfoData() {
-    const result = await UseContentful(businessInfoQuery);
-    return result.data.businessInformation;
-  }
-
-  const businessInfo: BusinessInfo = await fetchBusinessInfoData();
-
   return (
     <>
       <footer className={styles.StandardFooter}>
@@ -119,52 +98,7 @@ export default async function StandardFooter() {
         {/* Business Info */}
         <div className={styles.StandardFooter__info}>
           <div className={styles["StandardFooter__info-col"]}>
-            <h3 className={styles["StandardFooter__info-col-title"]}>
-              {businessInfo.title}
-            </h3>
-            {businessInfo.information.map((item, index) => (
-              <Fragment key={index}>
-                <div className={styles["StandardFooter__info-col-item"]}>
-                  <Image
-                    className={styles["StandardFooter__info-col-item-icon"]}
-                    alt={item.iconTitle}
-                    width={item.iconWidth}
-                    height={item.iconHeight}
-                    src={item.icon}
-                  />
-                  {item.link ? (
-                    <>
-                      {item.content2 && (
-                        <p
-                          className={
-                            styles["StandardFooter__info-col-item-text"]
-                          }
-                        >
-                          <Link href={item.link}>{item.content}</Link>
-                          <br />
-                          <i>{item.content2}</i>
-                        </p>
-                      )}
-                      {!item.content2 && (
-                        <Link
-                          className={
-                            styles["StandardFooter__info-col-item-text"]
-                          }
-                          href={item.link}
-                          target={item.newTab ? "_blank" : "_self"}
-                        >
-                          {item.content}
-                        </Link>
-                      )}
-                    </>
-                  ) : (
-                    <p className={styles["StandardFooter__info-col-item-text"]}>
-                      {item.content}
-                    </p>
-                  )}
-                </div>
-              </Fragment>
-            ))}
+            <StandardBusinessInfo styling="footer" />
             <Anchor
               url="https://schedulicity.com/scheduling/CMLB9U/services"
               text="Schedule An Appointment"

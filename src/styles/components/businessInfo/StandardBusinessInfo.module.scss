@@ -1,0 +1,66 @@
+.StandardBusinessInfo {
+  &--footer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 20px;
+
+    img {
+      margin-right: 10px;
+      min-width: 20px;
+    }
+
+    p {
+      font-family: $primary-font;
+      font-size: #{fluid(16px, 20px)};
+      color: $primary-color;
+      white-space: pre-wrap;
+
+      a {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &--page {
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+    margin-bottom: #{fluid(10px, 32px)};
+    align-items: flex-start;
+    max-width: 526px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    img {
+      min-width: #{fluid(20px, 32px)};
+    }
+
+    p {
+      font-size: #{fluid(17px, 24px)};
+      color: $black;
+      white-space: pre-wrap;
+
+      a {
+        color: $black;
+      }
+    }
+  }
+}
+
+.title {
+  &--footer {
+    color: $primary-color;
+    font-family: $primary-font;
+    font-size: #{fluid(18px, 22px)};
+    margin-bottom: 28px;
+  }
+
+  &--page {
+    font-size: #{fluid(20px, 32px)};
+    margin-bottom: #{fluid(10px, 32px)};
+    font-weight: 700;
+  }
+}
