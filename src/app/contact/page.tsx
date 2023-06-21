@@ -1,10 +1,3 @@
-// Next
-import Link from "next/link";
-import Image from "next/image";
-
-// React
-import { Fragment } from "react";
-
 // Custom Hooks
 import UseContentful from "@/hook/useContentful";
 
