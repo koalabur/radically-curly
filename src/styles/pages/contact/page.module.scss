@@ -32,38 +32,5 @@
     @include laptop {
       width: 100%;
     }
-
-    &-item {
-      display: flex;
-      flex-direction: row;
-      gap: 9px;
-      margin-bottom: #{fluid(10px, 32px)};
-      align-items: flex-start;
-      max-width: 526px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      &-icon {
-        min-width: #{fluid(20px, 32px)};
-      }
-
-      &-text {
-        font-size: #{fluid(17px, 24px)};
-        color: $black;
-        white-space: pre-wrap;
-
-        a {
-          color: $black;
-        }
-      }
-    }
-
-    &-title {
-      font-size: #{fluid(20px, 32px)};
-      margin-bottom: #{fluid(10px, 32px)};
-      font-weight: 700;
-    }
   }
 }
