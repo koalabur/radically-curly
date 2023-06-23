@@ -119,15 +119,10 @@ export default async function Home() {
 
   const experiencesData: ExperiencesData = await fetchExperiencesQuery();
 
-  const sectionStyle = {
-    scrollSnapAlign: "start",
-    scrollSnapStop: "always",
-  };
-
   return (
     <main className={styles.main}>
       {/* Intro */}
-      <section className={styles.intro} style={sectionStyle}>
+      <section className={styles.intro}>
         <div className={styles["intro__blob"]}></div>
 
         <div className={styles.intro__col}>
@@ -210,7 +205,7 @@ export default async function Home() {
         </div>
       </section>
       {/* You May Have Seen Us In... */}
-      <section className={styles.accolades} style={sectionStyle}>
+      <section className={styles.accolades}>
         <h2 className={styles["accolades__title"]}>
           You May Have Seen Us In...
         </h2>
@@ -219,7 +214,7 @@ export default async function Home() {
         </div>
       </section>
       {/* Services Offered */}
-      <section className={styles.experiences} style={sectionStyle}>
+      <section className={styles.experiences}>
         <div className={styles.experiences__col}>
           <Image
             className={styles["experiences__col-img"]}

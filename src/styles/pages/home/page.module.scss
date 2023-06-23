@@ -1,5 +1,11 @@
+@mixin scroll-snap {
+  scroll-snap-lign: start;
+  scroll-snap-stop: always;
+}
+
 .accolades {
   @include edge-padding;
+  @include scroll-snap;
   padding-top: 45px;
   padding-bottom: 45px;
 
@@ -40,6 +46,7 @@
 }
 
 .experiences {
+  @include scroll-snap;
   background: $black;
   display: flex;
   flex-direction: row;
@@ -200,6 +207,7 @@
 }
 
 .intro {
+  @include scroll-snap;
   background: $primary-color;
   display: flex;
   flex-direction: row;
