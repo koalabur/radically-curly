@@ -119,10 +119,14 @@ export default async function Home() {
 
   const experiencesData: ExperiencesData = await fetchExperiencesQuery();
 
+  const sectionStyle = {
+    scrollSnapAlign: "start",
+  };
+
   return (
-    <main>
+    <main className={styles.main}>
       {/* Intro */}
-      <section className={styles.intro}>
+      <section className={styles.intro} style={sectionStyle}>
         <div className={styles["intro__blob"]}></div>
 
         <div className={styles.intro__col}>
@@ -205,7 +209,7 @@ export default async function Home() {
         </div>
       </section>
       {/* You May Have Seen Us In... */}
-      <section className={styles.accolades}>
+      <section className={styles.accolades} style={sectionStyle}>
         <h2 className={styles["accolades__title"]}>
           You May Have Seen Us In...
         </h2>
@@ -214,7 +218,7 @@ export default async function Home() {
         </div>
       </section>
       {/* Services Offered */}
-      <section className={styles.experiences}>
+      <section className={styles.experiences} style={sectionStyle}>
         <div className={styles.experiences__col}>
           <Image
             className={styles["experiences__col-img"]}
@@ -289,6 +293,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
+      <section aria-hidden={true} className={styles.falseFooter}></section>
     </main>
   );
 }

@@ -185,6 +185,20 @@
   }
 }
 
+.falseFooter {
+  height: 852px;
+  bottom: 0;
+  scroll-snap-align: start;
+  z-index: -1;
+  margin-bottom: -852px;
+  background: $black;
+
+  @include laptop {
+    margin-bottom: #{fluid(-1500px, -1000px)};
+    height: #{fluid(1500px, 1000px)};
+  }
+}
+
 .intro {
   background: $primary-color;
   display: flex;
