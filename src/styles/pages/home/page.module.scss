@@ -1,5 +1,16 @@
+@mixin scroll-snap {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  @include phone {
+    scroll-snap-align: none;
+    scroll-snap-stop: none;
+  }
+}
+
 .accolades {
   @include edge-padding;
+  @include scroll-snap;
   padding-top: 45px;
   padding-bottom: 45px;
 
@@ -40,6 +51,7 @@
 }
 
 .experiences {
+  @include scroll-snap;
   background: $black;
   display: flex;
   flex-direction: row;
@@ -185,7 +197,22 @@
   }
 }
 
+.falseFooter {
+  @include scroll-snap;
+  height: 852px;
+  bottom: 0;
+  z-index: -1;
+  margin-bottom: -852px;
+  background: $black;
+
+  @include laptop {
+    margin-bottom: #{fluid(-1500px, -1000px)};
+    height: #{fluid(1500px, 1000px)};
+  }
+}
+
 .intro {
+  @include scroll-snap;
   background: $primary-color;
   display: flex;
   flex-direction: row;

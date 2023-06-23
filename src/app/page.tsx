@@ -120,7 +120,7 @@ export default async function Home() {
   const experiencesData: ExperiencesData = await fetchExperiencesQuery();
 
   return (
-    <main>
+    <main className={styles.main}>
       {/* Intro */}
       <section className={styles.intro}>
         <div className={styles["intro__blob"]}></div>
@@ -289,6 +289,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
+      <section aria-hidden={true} className={styles.falseFooter}></section>
     </main>
   );
 }
