@@ -10,6 +10,7 @@
 
   @include laptop {
     width: calc(100% / 2 - #{fluid(15px, 140px)});
+    justify-content: flex-start;
   }
 
   &:hover > &__img,
