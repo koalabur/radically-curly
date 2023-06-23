@@ -121,6 +121,7 @@ export default async function Home() {
 
   const sectionStyle = {
     scrollSnapAlign: "start",
+    scrollSnapStop: "always",
   };
 
   return (
