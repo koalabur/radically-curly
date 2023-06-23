@@ -1,6 +1,11 @@
 @mixin scroll-snap {
   scroll-snap-align: start;
   scroll-snap-stop: always;
+
+  @include phone {
+    scroll-snap-align: none;
+    scroll-snap-stop: none;
+  }
 }
 
 .accolades {
