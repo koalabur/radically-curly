@@ -2,7 +2,7 @@
   scroll-snap-align: start;
   scroll-snap-stop: always;
 
-  @include phone {
+  @include laptop {
     scroll-snap-align: none;
     scroll-snap-stop: none;
   }
@@ -206,8 +206,8 @@
   background: $black;
 
   @include laptop {
-    margin-bottom: #{fluid(-1500px, -1000px)};
-    height: #{fluid(1500px, 1000px)};
+    display: none;
+    visibility: hidden;
   }
 }
 
