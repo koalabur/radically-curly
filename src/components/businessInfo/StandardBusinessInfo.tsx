@@ -1,3 +1,5 @@
+"use client";
+
 // Next
 import Image from "next/image";
 import Link from "next/link";
@@ -47,9 +49,8 @@ export default async function StandardBusinessInfo({ styling }: Props) {
 
   const businessInfoQuery = `
     query businessInformationEntryQuery {
-      businessInformation(id: "6HdVpQhxVZ8Rd08sSfnC9F") {
-        title
-        detailsCollection {
+      businessInformation(id: "4To2elKw6fJerNKXCUD1ya") {
+        businessDetailsCollection {
           items {
             icon {
               url
@@ -72,10 +73,9 @@ export default async function StandardBusinessInfo({ styling }: Props) {
   }
 
   const businessInfo: BusinessInfo = await fetchBusinessInfoData();
-
   interface BusinessInfo {
     title: string;
-    detailsCollection: {
+    businessDetailsCollection: {
       items: {
         icon: {
           url: string;
@@ -99,7 +99,7 @@ export default async function StandardBusinessInfo({ styling }: Props) {
       >
         {businessInfo.title}
       </h3>
-      {businessInfo.detailsCollection.items.map((item, index) => {
+      {businessInfo.businessDetailsCollection.items.map((item, index) => {
         return (
           <div
             key={index}
