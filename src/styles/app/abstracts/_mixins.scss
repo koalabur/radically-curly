@@ -14,3 +14,13 @@
     @content;
   }
 }
+
+@mixin scroll-snap {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  @include laptop {
+    scroll-snap-align: none;
+    scroll-snap-stop: none;
+  }
+}
