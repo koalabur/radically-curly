@@ -54,38 +54,28 @@ export default function HomeHero({ content }: Props) {
   useLayoutEffect(() => {
     // ctx will cleanup because of double rendering
     let ctx = gsap.context(() => {
-      gsap.fromTo(
-        title.current,
-        { opacity: 0, transform: "translateX(-100%)" },
-        {
-          opacity: 1,
-          transform: "translateX(0%)",
-          duration: 1,
-          ease: "power1.inOut",
-        }
-      );
+      gsap.to(title.current, {
+        opacity: 1,
+        transform: "translateX(0%)",
+        duration: 1,
+        ease: "power1.inOut",
+      });
 
-      gsap.fromTo(
-        subtitle.current,
-        { opacity: 0, transform: "translateX(-100%)" },
-        {
-          opacity: 1,
-          transform: "translateX(0%)",
-          duration: 1.1,
-          ease: "power1.inOut",
-        }
-      );
+      gsap.to(subtitle.current, {
+        opacity: 1,
+        transform: "translateX(0%)",
+        duration: 1,
+        delay: 0.15,
+        ease: "power1.inOut",
+      });
 
-      gsap.fromTo(
-        btn.current,
-        { opacity: 0, transform: "translateX(-100%)" },
-        {
-          opacity: 1,
-          transform: "translateX(0%)",
-          duration: 1.25,
-          ease: "power1.inOut",
-        }
-      );
+      gsap.to(btn.current, {
+        opacity: 1,
+        transform: "translateX(0%)",
+        duration: 1,
+        delay: 0.25,
+        ease: "power1.inOut",
+      });
     });
     return () => ctx.revert(); // <- cleanup!
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -102,7 +92,7 @@ export default function HomeHero({ content }: Props) {
         <h2 className={styles["HomeHero__col-subtitle"]} ref={subtitle}>
           {content.subtitle}
         </h2>
-        <div ref={btn}>
+        <div ref={btn} style={{ opacity: 0, transform: "translateX(-100%)" }}>
           <Anchor
             text="Schedule An Appointment Now"
             url="https://schedulicity.com/scheduling/CMLB9U/services"

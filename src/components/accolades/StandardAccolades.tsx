@@ -39,23 +39,17 @@ export default function StandardAccolades({ data }: Props) {
     let ctx = gsap.context(() => {
       itemRefs.current = itemRefs.current.slice(0, data.length);
 
-      gsap.set(itemRefs.current, { opacity: 0 });
-
       itemRefs.current.forEach((itemRef, index) => {
-        gsap.fromTo(
-          itemRef,
-          { opacity: 0 },
-          {
-            opacity: 1,
-            duration: 1,
-            scrollTrigger: {
-              trigger: itemRef,
-              start: "top 85%",
-            },
-            delay: index * 0.1, // Delay based on index
-            ease: "power1.inOut",
-          }
-        );
+        gsap.to(itemRef, {
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: itemRef,
+            start: "top 85%",
+          },
+          delay: index * 0.1, // Delay based on index
+          ease: "power1.inOut",
+        });
       });
     });
     return () => ctx.revert(); // <- cleanup!
@@ -68,7 +62,7 @@ export default function StandardAccolades({ data }: Props) {
         <Link
           href={item.url}
           target="_blank"
-          key={item.title}
+          key={index}
           ref={(el) => (itemRefs.current[index] = el)}
         >
           <Image
