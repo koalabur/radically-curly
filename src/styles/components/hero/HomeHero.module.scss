@@ -167,6 +167,8 @@
       font-size: #{fluid(40px, 56px)};
       font-weight: 400;
       margin-bottom: #{fluid(20px, 35px)};
+      opacity: 0;
+      transform: translateX(-100%);
 
       @include laptop {
         text-align: center;
@@ -179,6 +181,8 @@
       width: 100%;
       max-width: 600px;
       margin-bottom: -10px;
+      opacity: 0;
+      transform: translateX(-100%);
 
       @include laptop {
         font-size: 6.65rem;
