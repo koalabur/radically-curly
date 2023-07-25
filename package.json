@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watch",
-    "test-all": "jest --watchAll"
+    "test": "jest"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.17.0",
