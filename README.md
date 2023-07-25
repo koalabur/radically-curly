@@ -1,14 +1,14 @@
 ## What's Going On?
 
-![alt text](https://lh4.googleusercontent.com/Ii4fCi3e4TtyyQIW22XtYmG369dECs0oheOuKDdsmvrNMDDKQJ5zQwm3l7g9twToVSo=w2400 "Next 13") [Next 13](https://nextjs.org/)
+![Nextjs](https://lh4.googleusercontent.com/Ii4fCi3e4TtyyQIW22XtYmG369dECs0oheOuKDdsmvrNMDDKQJ5zQwm3l7g9twToVSo=w2400 "Next 13") [Next 13](https://nextjs.org/)
 
-![alt text](https://lh6.googleusercontent.com/aNQxUtMEztBjZePrAkL7KPWSXJazMGwnxMDXazxDO4BNh-4aw6YwkvtZGm-oR07mih8=w2400 "GSAP") [GSAP](https://greensock.com/)
+![GSAP](https://lh6.googleusercontent.com/aNQxUtMEztBjZePrAkL7KPWSXJazMGwnxMDXazxDO4BNh-4aw6YwkvtZGm-oR07mih8=w2400 "GSAP") [GSAP](https://greensock.com/)
 
-![alt text](https://lh6.googleusercontent.com/FU5h_Q0As38kMoqvxtWEmzK10JkainV6PdkepauYdChfg4V_vFi4qpqc-hQnAch1PsU=w2400 "Contentful") [Contentful](https://www.contentful.com/)
+![Contentful](https://lh6.googleusercontent.com/FU5h_Q0As38kMoqvxtWEmzK10JkainV6PdkepauYdChfg4V_vFi4qpqc-hQnAch1PsU=w2400 "Contentful") [Contentful](https://www.contentful.com/)
 
-![alt text](https://lh3.googleusercontent.com/drive-viewer/AFGJ81pvppyPJ-lN9CFdE3uiEtfjRRWUgXrcDxhMklqj69zMJ1LQO-LkI-N5L2DKmB7WCCrZS6cu_JKeLqgRZAvPYj-7NPE8=s2560 "Jest") [Jest](https://jestjs.io/)
+![Jest](https://lh3.googleusercontent.com/drive-viewer/AITFw-wpm8sqDIyMYUeab_jUawEZxZks0i7oXnKIvJc38pM_X4CKrI8tO39LO-V6wo2EhPfyGmskjMv-prcDKBINMfNzO-kI=s2560 "Jest") [Jest](https://jestjs.io/)
 
-![alt text](https://lh3.googleusercontent.com/P-ZUEk2nqRdojQZXEDr72g-2z92yxlwHwdfjYo2A_eu10pr6GjtmnftRKG3JSOcphV8=w2400 "Vercel") [Vercel](https://vercel.com/)
+![Vercel](https://lh3.googleusercontent.com/P-ZUEk2nqRdojQZXEDr72g-2z92yxlwHwdfjYo2A_eu10pr6GjtmnftRKG3JSOcphV8=w2400 "Vercel") [Vercel](https://vercel.com/)
 
 ---
 
