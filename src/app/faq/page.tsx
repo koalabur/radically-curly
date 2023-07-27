@@ -31,7 +31,7 @@ export const metadata = {
     "Next.js",
     "Contentful",
   ],
-  author: { name: "Danielle Green" },
+  author: { name: "Cameron Roberts" },
   openGraph: {
     title: "Radically Curly",
     description:
