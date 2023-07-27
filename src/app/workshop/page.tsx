@@ -38,7 +38,7 @@ export const metadata = {
     "Next.js",
     "Contentful",
   ],
-  author: { name: "Danielle Green" },
+  author: { name: "Cameron Roberts" },
   openGraph: {
     title: "Radically Curly",
     description:
@@ -201,7 +201,7 @@ export default async function Workshop() {
                 Workshop Begins On
               </h2>
               <p className={styles["date__content-day"]}>
-                <ConvertDate date={"2023-08-28T00:00:00.000Z"} />
+                <ConvertDate date={workshopPage.startDate} />
               </p>
             </div>
           </section>

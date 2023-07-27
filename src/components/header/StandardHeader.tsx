@@ -1,12 +1,17 @@
+"use client";
+
 // Documentation:
-// Header for any page that needs it. Can be server-side since there
-// is no functionality behind it.
+// Header for any page that needs
 
 // Next
 import Image from "next/image";
 
 // React
+import { useLayoutEffect, useRef } from "react";
 import PropTypes from "prop-types";
+
+// GSAP
+import { gsap } from "gsap";
 
 // Styles
 import styles from "@/styles/components/header/StandardHeader.module.scss";
@@ -16,6 +21,22 @@ type Props = {
 };
 
 export default function StandardHeader({ text }: Props) {
+  const title = useRef<HTMLHeadingElement | null>(null);
+
+  useLayoutEffect(() => {
+    // ctx will cleanup because of double rendering
+    let ctx = gsap.context(() => {
+      gsap.to(title.current, {
+        opacity: 1,
+        duration: 0.5,
+        delay: 0.5,
+        ease: "power1.inOut",
+      });
+    });
+    return () => ctx.revert(); // <- cleanup!
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <header className={styles.StandardHeader}>
       <Image
@@ -27,7 +48,9 @@ export default function StandardHeader({ text }: Props) {
         loading="eager"
       />
 
-      <h1 className={styles.StandardHeader__title}>{text}</h1>
+      <h1 className={styles.StandardHeader__title} ref={title}>
+        {text}
+      </h1>
     </header>
   );
 }
