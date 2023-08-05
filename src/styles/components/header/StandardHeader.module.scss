@@ -5,12 +5,20 @@
   align-items: end;
   overflow-x: hidden;
   padding-bottom: #{fluid(30px, 150px)};
+  padding-top: 120px;
+
+  @include phone {
+    padding-top: 85px;
+  }
 
   &__bg {
     width: 100%;
     grid-area: 1 / 1 / 2 / 2;
     min-height: 250px;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   &__title {
@@ -20,8 +28,8 @@
     margin-right: auto;
     grid-area: 1 / 1 / 2 / 2;
     text-align: center;
-    padding-bottom: 50px;
     opacity: 0;
+    position: relative;
     @include edge-padding;
   }
 }

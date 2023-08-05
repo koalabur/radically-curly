@@ -1,8 +1,5 @@
 "use client";
 
-// Documentation:
-// Header for any page that needs
-
 // Next
 import Image from "next/image";
 
