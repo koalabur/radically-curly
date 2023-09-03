@@ -134,21 +134,14 @@ export default async function Workshop() {
 
   const workshopPage: WorkshopPage = await fetchWorkshopPageData();
 
+  const thing = new Date(workshopPage.startDate);
+  const thing2 = new Date();
   return (
     <main>
       <PageTitle title="Workshop" />
       <section className={styles.intro}>
-        <video className={styles.intro__video} autoPlay muted loop playsInline>
-          <source
-            src="https://videos.ctfassets.net/3dr0slfxb86n/6lhJb1tXDc2UMZi0UBeDfI/5079357aa34a509afb74f7a066e3690d/Curly_Hair_Workshops_for_hair_stylists.mp4"
-            type="video/mp4"
-          />
-          <source
-            src="https://videos.ctfassets.net/3dr0slfxb86n/36fquIZYHATqqmbK1DZK8q/70ccc68dc76bcd6f64ab2e36863fc7bc/Curly_Hair_Workshops_for_hair_stylists.webm"
-            type="video/webm"
-          />
-          Your browser does not support the video tag.
-        </video>
+      <p>{ thing.toString() }</p>
+        <p>{ thing2.toString() }</p>
         <div className={styles.intro__content}>
           {new Date() > new Date(workshopPage.startDate) ? (
             <>
