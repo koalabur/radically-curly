@@ -142,6 +142,7 @@ export default async function Workshop() {
       <section className={styles.intro}>
       <p>{ thing.toString() }</p>
         <p>{ thing2.toString() }</p>
+        {thing2 > thing ? <p>workshop expired</p> : <p>workshop active</p>}
         <div className={styles.intro__content}>
           {new Date() > new Date(workshopPage.startDate) ? (
             <>
