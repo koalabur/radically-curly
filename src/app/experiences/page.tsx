@@ -85,7 +85,9 @@ export default async function Experiences() {
           serviceCategory
           servicesCollection {
             items {
-              service
+              serviceTitle {
+                json
+              }
               priceOfTheService
               time
               description
@@ -98,7 +100,9 @@ export default async function Experiences() {
           serviceCategory
           servicesCollection {
             items {
-              service
+              serviceTitle {
+                json
+              }
               priceOfTheService
               time
               description
@@ -111,7 +115,9 @@ export default async function Experiences() {
           serviceCategory
           servicesCollection {
             items {
-              service
+              serviceTitle {
+                json
+              }
               priceOfTheService
               time
               description
@@ -124,7 +130,9 @@ export default async function Experiences() {
           serviceCategory
           servicesCollection {
             items {
-              service
+              serviceTitle {
+                json
+              }
               priceOfTheService
               time
               description
@@ -137,7 +145,9 @@ export default async function Experiences() {
           serviceCategory
           servicesCollection {
             items {
-              service
+              serviceTitle {
+                json
+              }
               priceOfTheService
               time
               description
@@ -150,7 +160,9 @@ export default async function Experiences() {
           serviceCategory
           servicesCollection {
             items {
-              service
+              serviceTitle {
+                json
+              }
               priceOfTheService
               time
               description

@@ -8,6 +8,9 @@
 import { ReactNode, useEffect, useLayoutEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
+// Contentful rich text
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
 // Styles
 import styles from "@/styles/components/list/Services.module.scss";
 
@@ -23,7 +26,7 @@ interface CategoryDetails {
   serviceCategory: string;
   servicesCollection: {
     items: {
-      service: string;
+      serviceTitle: any;
       priceOfTheService: string;
       time?: string;
       description?: string;
@@ -101,15 +104,12 @@ export default function Services({ category }: Props) {
         >
           <h3 className={styles.Services__title}>{item.serviceCategory}</h3>
           <ul className={styles.Services__list}>
-            {item.servicesCollection.items.map((service) => (
-              <li
-                className={styles["Services__list-item"]}
-                key={service.service}
-              >
+            {item.servicesCollection.items.map((service, index) => (
+              <li className={styles["Services__list-item"]} key={index}>
                 <div className={styles["Services__list-item-row"]}>
-                  <p className={styles["Services__list-item-service"]}>
-                    {service.service}
-                  </p>
+                  <div className={styles["Services__list-item-service"]}>
+                    {documentToReactComponents(service.serviceTitle.json)}
+                  </div>
                   <div className={styles["Services__list-item-line"]}></div>
                   <p className={styles["Services__list-item-price"]}>
                     {service.priceOfTheService}

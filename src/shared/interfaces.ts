@@ -42,6 +42,7 @@ interface ServiceDetails {
     servicesCollection: {
       items: {
         service: string;
+        serviceTitle: any;
         priceOfTheService: string;
       }[];
     };

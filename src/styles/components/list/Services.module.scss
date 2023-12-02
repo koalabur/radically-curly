@@ -51,9 +51,11 @@
       }
 
       &-service {
-        font-size: #{fluid(14px, 20px)};
-        min-width: 90px;
-        display: inline-table;
+        p {
+          font-size: #{fluid(14px, 20px)};
+          min-width: 90px;
+          display: inline-table;
+        }
       }
     }
   }
