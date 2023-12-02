@@ -7,7 +7,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { MARKS, INLINES, BLOCKS } from "@contentful/rich-text-types";
 
 // Custom Hooks
-import UseContentful from "@/hook/useContentful";
+import { getData } from "@/hook/useContentful";
 
 // Components
 import Anchor from "@/components/ui/Anchor";
@@ -62,8 +62,6 @@ export const metadata = {
 };
 
 export default async function Workshop() {
-  // This will get SUPER MESSY WITHOUT THE ANY TYPE
-  // SO SO MESSY
   const options = {
     renderMark: {
       [MARKS.CODE]: (text: any) => {
@@ -91,9 +89,8 @@ export default async function Workshop() {
         return <p>{children}</p>;
       },
       [INLINES.HYPERLINK]: (node: any) => {
-        const text = node.content.find(
-          (item: any) => item.nodeType === "text"
-        )?.value;
+        const text = node.content.find((item: any) => item.nodeType === "text")
+          ?.value;
         return (
           <Link href={node.data.uri} target="_blank" rel="noopener noreferrer">
             {text}
@@ -127,12 +124,8 @@ export default async function Workshop() {
     }   
   `;
 
-  async function fetchWorkshopPageData() {
-    const result = await UseContentful(workshopPageQuery);
-    return result.data.workshopPage.workshopDetails;
-  }
-
-  const workshopPage: WorkshopPage = await fetchWorkshopPageData();
+  const { data } = await getData(workshopPageQuery);
+  const workshopPage: WorkshopPage = data.workshopPage.workshopDetails;
 
   return (
     <main>

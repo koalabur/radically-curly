@@ -8,11 +8,18 @@
 
     &-item {
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
+      flex-direction: column;
       margin-bottom: #{fluid(10px, 20px)};
+
+      &-desc {
+        font-size: #{fluid(13px, 15px)};
+        margin-bottom: 2px;
+        line-height: 140%;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
 
       &:last-child {
         margin-bottom: 0;
@@ -26,6 +33,21 @@
 
       &-price {
         font-size: #{fluid(16px, 24px)};
+      }
+
+      &-row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        margin-bottom: 2px;
+
+        &--stack {
+          flex-flow: column nowrap;
+          align-items: flex-start;
+        }
       }
 
       &-service {

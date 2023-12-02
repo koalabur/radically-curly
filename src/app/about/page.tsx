@@ -1,5 +1,5 @@
 // Custom Hooks
-import UseContentful from "@/hook/useContentful";
+import { getData } from "@/hook/useContentful";
 
 // Components
 import Header from "@/components/header/StandardHeader";
@@ -69,12 +69,8 @@ export default async function About() {
     }
   `;
 
-  async function fetchAboutPageData() {
-    const result = await UseContentful(aboutPageQuery);
-    return result.data.aboutPage;
-  }
-
-  const aboutPage: AboutPage = await fetchAboutPageData();
+  const { data } = await getData(aboutPageQuery);
+  const { aboutPage }: { aboutPage: AboutPage } = data;
 
   return (
     <main>

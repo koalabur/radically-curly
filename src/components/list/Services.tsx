@@ -5,7 +5,7 @@
 // Also has cool GSAP stuff too.
 
 // React
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { ReactNode, useEffect, useLayoutEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 // Styles
@@ -24,7 +24,9 @@ interface CategoryDetails {
   servicesCollection: {
     items: {
       service: string;
-      priceOfTheService: number;
+      priceOfTheService: string;
+      time?: string;
+      description?: string;
     }[];
   };
 }
@@ -70,6 +72,25 @@ export default function Services({ category }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  function renderTimeOrDescription(argA: string, argB: string) {
+    if (argA || argB) {
+      return (
+        <div
+          className={
+            styles["Services__list-item-row Services__list-item-row--stack"]
+          }
+        >
+          <p className={styles["Services__list-item-desc"]}>
+            <strong>Time:</strong> {argA}
+          </p>
+          <p className={styles["Services__list-item-desc"]}>
+            <strong>Description:</strong> {argB}
+          </p>
+        </div>
+      );
+    }
+  }
+
   return (
     <>
       {category.map((item, categoryIndex) => (
@@ -80,18 +101,21 @@ export default function Services({ category }: Props) {
         >
           <h3 className={styles.Services__title}>{item.serviceCategory}</h3>
           <ul className={styles.Services__list}>
-            {item.servicesCollection.items.map((service, serviceIndex) => (
+            {item.servicesCollection.items.map((service) => (
               <li
                 className={styles["Services__list-item"]}
                 key={service.service}
               >
-                <p className={styles["Services__list-item-service"]}>
-                  {service.service}
-                </p>
-                <div className={styles["Services__list-item-line"]}></div>
-                <p className={styles["Services__list-item-price"]}>
-                  &#36;{service.priceOfTheService}
-                </p>
+                <div className={styles["Services__list-item-row"]}>
+                  <p className={styles["Services__list-item-service"]}>
+                    {service.service}
+                  </p>
+                  <div className={styles["Services__list-item-line"]}></div>
+                  <p className={styles["Services__list-item-price"]}>
+                    {service.priceOfTheService}
+                  </p>
+                </div>
+                {renderTimeOrDescription(service.time!, service.description!)}
               </li>
             ))}
           </ul>

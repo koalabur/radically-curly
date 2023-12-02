@@ -31,6 +31,8 @@ const allura = Allura({
   preload: true,
 });
 
+export const revalidate = 0;
+
 export default function RootLayout({
   children,
 }: {
@@ -40,7 +42,10 @@ export default function RootLayout({
     <html lang="en">
       <GoogleAnalytics />
       <MenuContextProvider>
-        <body className={`${lora.variable} ${allura.variable}`}>
+        <body
+          className={`${lora.variable} ${allura.variable}`}
+          suppressHydrationWarning={true}
+        >
           <Menu />
           <Nav />
           {children}

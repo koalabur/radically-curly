@@ -1,5 +1,5 @@
 // Custom Hooks
-import UseContentful from "@/hook/useContentful";
+import { getData } from "@/hook/useContentful";
 
 // Components
 import Form from "@/components/form/ContactForm";
@@ -61,12 +61,8 @@ export default async function Contact() {
     }
   `;
 
-  async function fetchContactPageData() {
-    const result = await UseContentful(contactPageQuery);
-    return result.data.contactPage;
-  }
-
-  const contactPage: ContactPage = await fetchContactPageData();
+  const { data } = await getData(contactPageQuery);
+  const { contactPage }: { contactPage: ContactPage } = data;
 
   return (
     <main>

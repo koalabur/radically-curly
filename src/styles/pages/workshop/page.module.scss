@@ -13,6 +13,10 @@
     object-fit: cover;
     width: 100%;
     min-height: #{fluid(200px, 300px)};
+
+    @include laptop {
+      background: #f2f2f2;
+    }
   }
 
   &__content {
@@ -100,6 +104,7 @@
     padding: 10px;
     gap: 14px;
     max-width: 320px;
+    width: 100%;
 
     @include laptop {
       flex-direction: row;
@@ -138,7 +143,6 @@
         text-align: center;
         min-width: 32px;
       }
-
     }
   }
 }
