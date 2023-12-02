@@ -49,6 +49,15 @@
       }
     }
 
+    &-btn {
+      opacity: 0;
+      transform: translateX(-100%);
+
+      @include laptop {
+        margin: auto;
+      }
+    }
+
     &--gallery {
       position: relative;
       overflow: hidden;
@@ -177,7 +186,7 @@
 
     &-title {
       font-family: $secondary-font;
-      font-size: #{fluid(35px, 130px)};
+      font-size: #{fluid(78px, 130px)};
       width: 100%;
       max-width: 600px;
       margin-bottom: -10px;
@@ -192,7 +201,7 @@
       }
 
       @include phone {
-        font-size: 4.5rem;
+        font-size: 4.3rem;
       }
     }
   }
