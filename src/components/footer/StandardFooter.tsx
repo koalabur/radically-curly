@@ -131,9 +131,9 @@ export default async function StandardFooter() {
           <div className={styles["StandardFooter__copyright-divider"]}></div>
           <p className={styles["StandardFooter__copyright-text"]}>
             © Radically Curly 2014 - {new Date().getFullYear()} | Radically
-            Curly is a registered trademark of RadicallyCurly Inc. &quot;We Rock
-            the Fabric of Your Hair ®&quot; is a registered trademark of
-            RadicallyCurly Inc.
+            Curly is a registered trademark of Radically Curly Inc. &quot;We
+            Rock the Fabric of Your Hair <sup>®</sup>&quot; is a registered
+            trademark of Radically Curly Inc.
           </p>
         </div>
       </footer>
