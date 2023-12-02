@@ -6,7 +6,7 @@ import Image from "next/image";
 import PageTitle from "@/components/ui/PageTitle";
 
 // Custom Hooks
-import UseContentful from "@/hook/useContentful";
+import { getData } from "@/hook/useContentful";
 
 // Styles
 import styles from "@/styles/pages/shop/page.module.scss";
@@ -76,12 +76,8 @@ export default async function Page() {
     } 
   `;
 
-  async function fetchShopPageData() {
-    const result = await UseContentful(shopPageQuery);
-    return result.data.shopPage.productsCollection;
-  }
-
-  const shopPage: ShopPage = await fetchShopPageData();
+  const { data } = await getData(shopPageQuery);
+  const shopPage: ShopPage = data.shopPage.productsCollection;
 
   return (
     <main>

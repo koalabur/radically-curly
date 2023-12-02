@@ -2,7 +2,7 @@
 import { Fragment } from "react";
 
 // Custom Hooks
-import UseContentful from "@/hook/useContentful";
+import { getData } from "@/hook/useContentful";
 
 // Components
 import Accordion from "@/components/ui/Accordion";
@@ -68,12 +68,8 @@ export default async function FAQ() {
     }   
   `;
 
-  async function fetchFaqPageData() {
-    const result = await UseContentful(faqPageQuery);
-    return result.data.faqPage.questionsAndAnswersCollection;
-  }
-
-  const faqPage: FaqPage = await fetchFaqPageData();
+  const { data } = await getData(faqPageQuery);
+  const faqPage: FaqPage = data.faqPage.questionsAndAnswersCollection;
 
   return (
     <main>

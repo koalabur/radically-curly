@@ -2,7 +2,10 @@
 import Image from "next/image";
 
 // Custom Hooks
-import UseContentful from "@/hook/useContentful";
+import { getData } from "@/hook/useContentful";
+
+// Contentful rich text
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 // Components
 import Header from "@/components/header/StandardHeader";
@@ -65,80 +68,123 @@ export const metadata = {
 
 export default async function Experiences() {
   const experiencesPageQuery = `
-    query experiencesPageEntryQuery {
-      experiencesPage(id: "4OrKIru3MurK1je7jfldRN") {
-        header
-        experiencesIcon {
-          url
-          title
-          width
-          height
-        }
-        experiencesTitle
-        columnOneCollection(limit: 20) {
-          items {
-            serviceCategory
-            servicesCollection {
-              items {
-                service
-                priceOfTheService
-              }
+  query experiencesPageEntryQuery {
+    experiencesPage(id: "4OrKIru3MurK1je7jfldRN") {
+      header
+      experiencesIcon {
+        url
+        title
+        width
+        height
+      }
+      experiencesTitle {
+        json
+      }
+      regularExperiencesColumnOneCollection(limit: 15) {
+        items {
+          serviceCategory
+          servicesCollection {
+            items {
+              service
+              priceOfTheService
+              time
+              description
             }
-          }
-        }
-        columnTwoCollection(limit: 20) {
-          items {
-            serviceCategory
-            servicesCollection {
-              items {
-                service
-                priceOfTheService
-              }
-            }
-          }
-        }
-        columnThreeCollection(limit: 20) {
-          items {
-            serviceCategory
-            servicesCollection {
-              items {
-                service
-                priceOfTheService
-              }
-            }
-          }
-        }
-        heroImage {
-          title
-          url
-        }
-        mission
-        missionImage {
-          title
-          url
-        }
-        upperImageGalleryCollection(limit: 10) {
-          items {
-            title
-            url
-          }
-        }
-        lowerImageGalleryCollection(limit: 10) {
-          items {
-            title
-            url
           }
         }
       }
-    }    
+      regularExperiencesColumnTwoCollection(limit: 15) {
+        items {
+          serviceCategory
+          servicesCollection {
+            items {
+              service
+              priceOfTheService
+              time
+              description
+            }
+          }
+        }
+      }
+      regularExperiencesColumnThreeCollection(limit: 15) {
+        items {
+          serviceCategory
+          servicesCollection {
+            items {
+              service
+              priceOfTheService
+              time
+              description
+            }
+          }
+        }
+      }
+      braidedExperiencesColumnOneCollection(limit: 15) {
+        items {
+          serviceCategory
+          servicesCollection {
+            items {
+              service
+              priceOfTheService
+              time
+              description
+            }
+          }
+        }
+      }
+      braidedExperiencesColumnTwoCollection(limit: 15) {
+        items {
+          serviceCategory
+          servicesCollection {
+            items {
+              service
+              priceOfTheService
+              time
+              description
+            }
+          }
+        }
+      }
+      braidedExperiencesColumnThreeCollection(limit: 15) {
+        items {
+          serviceCategory
+          servicesCollection {
+            items {
+              service
+              priceOfTheService
+              time
+              description
+            }
+          }
+        }
+      }
+      heroImage {
+        title
+        url
+      }
+      mission
+      missionImage {
+        title
+        url
+      }
+      upperImageGalleryCollection(limit: 10) {
+        items {
+          title
+          url
+        }
+      }
+      lowerImageGalleryCollection(limit: 10) {
+        items {
+          title
+          url
+        }
+      }
+    }
+  }   
   `;
 
-  async function fetchExperiencesPageData() {
-    const result = await UseContentful(experiencesPageQuery);
-    return result.data.experiencesPage;
-  }
-
-  const experiencesPage: ExperiencesPage = await fetchExperiencesPageData();
+  const { data } = await getData(experiencesPageQuery);
+  const { experiencesPage }: { experiencesPage: ExperiencesPage } = data;
 
   return (
     <main>
@@ -153,23 +199,59 @@ export default async function Experiences() {
           height={experiencesPage.experiencesIcon.height}
           loading="eager"
         />
-        <h2 className={styles.experiences__title}>
-          {/* give me the first word */}
-          <span>
-            {experiencesPage.experiencesTitle.split(" ").shift()}
-          </span>{" "}
-          {/* cut out the first word, keep the rest */}
-          {experiencesPage.experiencesTitle.split(" ").slice(1)}
-        </h2>
+        <div className={styles.experiences__title}>
+          {documentToReactComponents(experiencesPage.experiencesTitle.json)}
+        </div>
+        <h3 className={styles["experiences__service-title"]}>
+          Regular Experiences
+        </h3>
         <div className={styles.experiences__services}>
           <div className={styles["experiences__services-col"]}>
-            <Services category={experiencesPage.columnOneCollection.items} />
+            <Services
+              category={
+                experiencesPage.regularExperiencesColumnOneCollection.items
+              }
+            />
           </div>
           <div className={styles["experiences__services-col"]}>
-            <Services category={experiencesPage.columnTwoCollection.items} />
+            <Services
+              category={
+                experiencesPage.regularExperiencesColumnTwoCollection.items
+              }
+            />
           </div>
           <div className={styles["experiences__services-col"]}>
-            <Services category={experiencesPage.columnThreeCollection.items} />
+            <Services
+              category={
+                experiencesPage.regularExperiencesColumnThreeCollection.items
+              }
+            />
+          </div>
+        </div>
+        <h3 className={styles["experiences__service-title"]}>
+          Braiding Experiences
+        </h3>
+        <div className={styles.experiences__services}>
+          <div className={styles["experiences__services-col"]}>
+            <Services
+              category={
+                experiencesPage.braidedExperiencesColumnOneCollection.items
+              }
+            />
+          </div>
+          <div className={styles["experiences__services-col"]}>
+            <Services
+              category={
+                experiencesPage.braidedExperiencesColumnTwoCollection.items
+              }
+            />
+          </div>
+          <div className={styles["experiences__services-col"]}>
+            <Services
+              category={
+                experiencesPage.braidedExperiencesColumnThreeCollection.items
+              }
+            />
           </div>
         </div>
         <div className={styles.experiences__cta}>
@@ -177,6 +259,13 @@ export default async function Experiences() {
             text="Schedule An Appointment"
             url="https://schedulicity.com/scheduling/CMLB9U/services"
             size="large"
+            newTab={true}
+          />
+          <Anchor
+            text="Schedule NBR Extensions"
+            url="https://form.jotform.com/221238669640157"
+            size="large"
+            type="secondary"
             newTab={true}
           />
         </div>

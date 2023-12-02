@@ -26,6 +26,10 @@ const nextConfig = {
             key: "Referrer-Policy",
             value: "strict-origin-when-cross-origin",
           },
+          {
+            key: "Cache-Control",
+            value: "maxage=3600, stale-while-revalidate=3600",
+          },
         ],
       },
     ];

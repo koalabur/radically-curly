@@ -6,10 +6,13 @@ export interface ExperiencesPage {
     width: number;
     height: number;
   };
-  experiencesTitle: string;
-  columnOneCollection: ServiceDetails;
-  columnTwoCollection: ServiceDetails;
-  columnThreeCollection: ServiceDetails;
+  experiencesTitle: any;
+  regularExperiencesColumnOneCollection: ServiceDetails;
+  regularExperiencesColumnTwoCollection: ServiceDetails;
+  regularExperiencesColumnThreeCollection: ServiceDetails;
+  braidedExperiencesColumnOneCollection: ServiceDetails;
+  braidedExperiencesColumnTwoCollection: ServiceDetails;
+  braidedExperiencesColumnThreeCollection: ServiceDetails;
   heroImage: {
     title: string;
     url: string;
@@ -39,7 +42,7 @@ interface ServiceDetails {
     servicesCollection: {
       items: {
         service: string;
-        priceOfTheService: number;
+        priceOfTheService: string;
       }[];
     };
   }[];
