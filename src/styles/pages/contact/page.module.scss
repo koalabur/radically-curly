@@ -21,8 +21,10 @@
     }
 
     &-header {
-      font-size: #{fluid(18px, 22px)};
       margin-bottom: #{fluid(10px, 34px)};
+      p {
+        font-size: #{fluid(18px, 22px)};
+      }
     }
   }
 

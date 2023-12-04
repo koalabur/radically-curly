@@ -1,6 +1,9 @@
 // Custom Hooks
 import { getData } from "@/hook/useContentful";
 
+// Contentful rich text
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
 // Components
 import Form from "@/components/form/ContactForm";
 import PageTitle from "@/components/ui/PageTitle";
@@ -56,7 +59,9 @@ export default async function Contact() {
   const contactPageQuery = `
     query contactPageEntryQuery {
       contactPage(id: "7tqTq8uzW1tCoyHETpdfEK") {
-        formHeader
+        header {
+          json
+        }
       }
     }
   `;
@@ -72,9 +77,9 @@ export default async function Contact() {
           <StandardBusinessInfo styling="page" />
         </div>
         <div className={styles.contact__form}>
-          <p className={styles["contact__form-header"]}>
-            {contactPage.formHeader}
-          </p>
+          <div className={styles["contact__form-header"]}>
+            {documentToReactComponents(contactPage.header.json)}
+          </div>
           <Form />
         </div>
       </section>
@@ -99,5 +104,5 @@ interface InformationDetails {
 }
 
 interface ContactPage {
-  formHeader: string;
+  header: any;
 }
