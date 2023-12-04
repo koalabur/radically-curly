@@ -24,18 +24,26 @@
     --_c: #0000 0 25%, #d1232a 0 50%;
     --_g1: repeating-linear-gradient(90deg, var(--_c)) repeat-x;
     --_g2: repeating-linear-gradient(180deg, var(--_c)) repeat-y;
-    background: var(--_g1) var(--_p, 25%) 0, var(--_g2) 0 var(--_p, 125%),
-      var(--_g1) var(--_p, 125%) 100%, var(--_g2) 100% var(--_p, 25%);
-    background-size: 200% 12px, 12px 200%;
+    background:
+      var(--_g1) var(--_p, 25%) 0,
+      var(--_g2) 0 var(--_p, 125%),
+      var(--_g1) var(--_p, 125%) 100%,
+      var(--_g2) 100% var(--_p, 25%);
+    background-size:
+      200% 12px,
+      12px 200%;
     cursor: pointer;
     filter: grayscale(20%);
     transition: 0.3s;
   }
 
   &__job {
-    font-size: #{fluid(18px, 20px)};
-    margin-bottom: 7px;
-    text-align: center;
+    h3 {
+      font-size: #{fluid(18px, 20px)};
+      margin-bottom: 7px;
+      text-align: center;
+      font-weight: 400;
+    }
   }
 
   &__learn {

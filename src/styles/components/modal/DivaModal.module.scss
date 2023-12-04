@@ -78,13 +78,10 @@
       padding-top: 21px;
 
       &-desc {
-        font-size: #{fluid(16px, 20px)};
         overflow-y: auto;
         padding-top: 15px;
         padding-bottom: 30px;
-        line-height: 140%;
         padding-right: 10px;
-        white-space: pre-wrap;
 
         @include laptop {
           overflow-y: auto;
@@ -103,16 +100,30 @@
           background: #736e67;
           border-radius: 4px;
         }
+
+        p {
+          font-size: #{fluid(16px, 20px)};
+          white-space: pre-wrap;
+          margin-bottom: 15px;
+          line-height: 140%;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
       }
 
       &-job {
-        font-size: #{fluid(19px, 22px)};
-        font-weight: 400;
-        font-style: italic;
         margin-bottom: #{fluid(18px, 25px)};
 
         @include laptop {
           @include edge-padding;
+        }
+
+        h3 {
+          font-size: #{fluid(19px, 22px)};
+          font-weight: 400;
+          font-style: italic;
         }
       }
 

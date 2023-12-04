@@ -11,6 +11,9 @@ import Image from "next/image";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
+// Contentful rich text
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
 // Compobnents
 import DivaModal from "@/components/modal/DivaModal";
 
@@ -23,12 +26,12 @@ type Props = {
 
 interface ParentData {
   name: string;
-  jobTitle: string;
+  jobTitle: any;
   image: {
     title: string;
     url: string;
   };
-  description: string;
+  description: any;
 }
 
 export default function StandardDivaCard({ data }: Props) {
@@ -70,7 +73,9 @@ export default function StandardDivaCard({ data }: Props) {
             height={469}
           />
           <h3 className={styles.StandardDivaCard__name}>{item.name}</h3>
-          <p className={styles.StandardDivaCard__job}>{item.jobTitle}</p>
+          <div className={styles.StandardDivaCard__job}>
+            {documentToReactComponents(item.jobTitle.json)}
+          </div>
           <p className={styles.StandardDivaCard__learn}>Learn More</p>
         </div>
       ))}

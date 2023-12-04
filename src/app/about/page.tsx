@@ -57,12 +57,16 @@ export default async function About() {
         divasCollection {
           items {
             name
-            jobTitle
+            jobTitle {
+              json
+            }
             image {
               title
               url
             }
-            description
+            description {
+              json
+            }
           }
         }
       }
