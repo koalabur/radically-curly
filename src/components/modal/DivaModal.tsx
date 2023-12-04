@@ -10,14 +10,17 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
+// Contentful rich text
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
 // Styles
 import styles from "@/styles/components/modal/DivaModal.module.scss";
 
 type Props = {
   src?: string;
   name?: string;
-  jobTitle?: string;
-  description?: string;
+  jobTitle?: any;
+  description?: any;
   isVisible: boolean;
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -62,9 +65,8 @@ export default function DivaModal({
         <Image
           className={styles["DivaModal__content-diva"]}
           src={
-            src
-              ? src
-              : "https://images.ctfassets.net/3dr0slfxb86n/4cf4qMWmPEjMOdnSugTge1/a7674d4e52623f9eb3b9d0ad21fc7967/Group_14_1_.jpg"
+            src ||
+            "https://images.ctfassets.net/3dr0slfxb86n/4cf4qMWmPEjMOdnSugTge1/a7674d4e52623f9eb3b9d0ad21fc7967/Group_14_1_.jpg"
           }
           alt={name ? name : "Placeholder"}
           width={329}
@@ -73,14 +75,16 @@ export default function DivaModal({
         />
         <div className={styles["DivaModal__content-info"]}>
           <p className={styles["DivaModal__content-info-name"]}>
-            {name ? name : "Waiting for name..."}
+            {name || "Waiting for name..."}
           </p>
-          <p className={styles["DivaModal__content-info-job"]}>
-            {jobTitle ? jobTitle : "Waiting for Official Job Title..."}
-          </p>
-          <p className={styles["DivaModal__content-info-desc"]}>
-            {description ? description : "Waiting for description..."}
-          </p>
+          <div className={styles["DivaModal__content-info-job"]}>
+            {documentToReactComponents(jobTitle?.json) ||
+              "Waiting for Official Job Title..."}
+          </div>
+          <div className={styles["DivaModal__content-info-desc"]}>
+            {documentToReactComponents(description?.json) ||
+              "Waiting for description..."}
+          </div>
         </div>
       </div>
     </div>
@@ -90,8 +94,8 @@ export default function DivaModal({
 DivaModal.propTypes = {
   src: PropTypes.string,
   name: PropTypes.string,
-  jobTitle: PropTypes.string,
-  description: PropTypes.string,
+  jobTitle: PropTypes.any,
+  description: PropTypes.any,
   isVisible: PropTypes.bool.isRequired,
   setIsVisible: PropTypes.func.isRequired,
 };
