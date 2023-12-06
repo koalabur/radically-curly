@@ -214,9 +214,6 @@ export default async function Experiences() {
         <div className={styles.experiences__title}>
           {documentToReactComponents(experiencesPage.experiencesTitle.json)}
         </div>
-        <h3 className={styles["experiences__service-title"]}>
-          Regular Experiences
-        </h3>
         <div className={styles.experiences__services}>
           <div className={styles["experiences__services-col"]}>
             <Services
@@ -271,13 +268,6 @@ export default async function Experiences() {
             text="Schedule An Appointment"
             url="https://schedulicity.com/scheduling/CMLB9U/services"
             size="large"
-            newTab={true}
-          />
-          <Anchor
-            text="Schedule NBR Extensions"
-            url="https://form.jotform.com/221238669640157"
-            size="large"
-            type="secondary"
             newTab={true}
           />
         </div>

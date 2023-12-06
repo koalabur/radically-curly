@@ -140,32 +140,12 @@
 
           &-img {
             border-radius: 14px;
+            max-width: 606px;
+            height: 100%;
+            width: auto;
 
-            &--1 {
+            @include laptop {
               width: 100%;
-              min-width: #{fluid(225px, 492px)};
-            }
-
-            &--2 {
-              max-width: 219px;
-              width: 100%;
-
-              @include laptop {
-                width: 50%;
-                max-width: 219px;
-                max-height: 142px;
-              }
-            }
-
-            &--3 {
-              max-width: 349px;
-              width: 100%;
-
-              @include laptop {
-                width: 50%;
-                max-width: 349px;
-                max-height: 227px;
-              }
             }
           }
         }
