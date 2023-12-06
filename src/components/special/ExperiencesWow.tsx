@@ -107,16 +107,6 @@ export default function ExperiencesWow({ data }: { data: ExperiencesPage }) {
         />
         <h2 className={styles["ExperiencesWow__hero-title"]}>
           <span>We</span> Rock The Fabric Of <span>Your</span> Hair{" "}
-          <sup
-            style={{
-              marginTop: "-16px",
-              marginLeft: "6px",
-              position: "absolute",
-              fontSize: "65%",
-            }}
-          >
-            ®
-          </sup>
         </h2>
       </div>
       <div className={styles.ExperiencesWow__mission}>
