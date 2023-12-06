@@ -175,8 +175,8 @@ export default async function Home() {
           <div className={styles["experiences__col-btns"]}>
             <Anchor
               text="Learn More About Experiences"
-              url="https://schedulicity.com/scheduling/CMLB9U/services"
-              newTab={true}
+              url="/experiences"
+              newTab={false}
               type="secondary"
             />
             <Anchor
