@@ -105,7 +105,7 @@ export default function HomeHero({ content }: Props) {
         <div className={styles["HomeHero__col-gallery-top"]}>
           <div className={styles["HomeHero__col-gallery-top-col"]}>
             <Image
-              className={`${styles["HomeHero__col-gallery-top-col-img"]}`}
+              className={`${styles["HomeHero__col-gallery-top-col-img"]} ${styles["HomeHero__col-gallery-top-col-img--1"]}`}
               alt={content.image1.title}
               src={content.image1.url}
               width={606}
@@ -113,6 +113,42 @@ export default function HomeHero({ content }: Props) {
               loading="eager"
             />
           </div>
+          <div className={styles["HomeHero__col-gallery-top-col"]}>
+            <Image
+              className={`${styles["HomeHero__col-gallery-top-col-img"]} ${styles["HomeHero__col-gallery-top-col-img--2"]}`}
+              alt={content.image2.title}
+              src={content.image2.url}
+              width={219}
+              height={143}
+              loading="eager"
+            />
+            <Image
+              className={`${styles["HomeHero__col-gallery-top-col-img"]} ${styles["HomeHero__col-gallery-top-col-img--3"]}`}
+              alt={content.image3.title}
+              src={content.image3.url}
+              width={349}
+              height={228}
+              loading="eager"
+            />
+          </div>
+        </div>
+        <div className={styles["HomeHero__col-gallery-bottom"]}>
+          <Image
+            className={`${styles["HomeHero__col-gallery-bottom-img"]} ${styles["HomeHero__col-gallery-bottom-img--4"]}`}
+            alt={content.image4.title}
+            src={content.image4.url}
+            width={349}
+            height={227}
+            loading="eager"
+          />
+          <Image
+            className={`${styles["HomeHero__col-gallery-bottom-img"]} ${styles["HomeHero__col-gallery-bottom-img--5"]}`}
+            alt={content.image5.title}
+            src={content.image5.url}
+            width={481}
+            height={300}
+            loading="eager"
+          />
         </div>
       </div>
       <div className={styles.HomeHero__scroll}>
