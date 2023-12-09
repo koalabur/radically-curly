@@ -2,6 +2,9 @@
 import Link from "next/link";
 import Image from "next/image";
 
+// Contentful rich text
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
 // Components
 import PageTitle from "@/components/ui/PageTitle";
 
@@ -69,6 +72,9 @@ export default async function Page() {
             }
             name
             affiliateProduct
+            additionalInfo {
+              json
+            }
             productLink
           }
         }
@@ -104,6 +110,11 @@ export default async function Page() {
                 {item.affiliateProduct ? "AFFILIATE" : "OFFICIAL"}
               </p>
               <p className={styles["shop__item-info-title"]}>{item.name}</p>
+              {item.additionalInfo && (
+                <div className={styles["shop__item-info-additional"]}>
+                  {documentToReactComponents(item.additionalInfo.json)}
+                </div>
+              )}
               <p className={styles["shop__item-info-btn"]}>
                 {item.affiliateProduct ? `Visit ${item.name}` : "Shop Now"}
               </p>
@@ -123,6 +134,7 @@ interface ShopPage {
     };
     name: string;
     affiliateProduct: boolean;
+    additionalInfo?: any;
     productLink: string;
   }[];
 }
