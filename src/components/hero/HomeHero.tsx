@@ -95,7 +95,7 @@ export default function HomeHero({ content }: Props) {
         <div ref={btn} className={styles["HomeHero__col-btn"]}>
           <Anchor
             text="Schedule An Appointment Now"
-            url="https://schedulicity.com/scheduling/CMLB9U/services"
+            url="https://www.schedulicity.com/scheduling/CMLB9U/services"
             size="large"
             newTab={true}
           />

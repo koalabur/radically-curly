@@ -152,7 +152,7 @@ export default async function Home() {
               <li key={index} className={styles["experiences__col-list-item"]}>
                 <Link
                   className={styles["experiences__col-list-item-link"]}
-                  href="https://schedulicity.com/scheduling/CMLB9U/services"
+                  href="https://www.schedulicity.com/scheduling/CMLB9U/services"
                   target="_blank"
                 >
                   <span>{item}</span>
@@ -181,7 +181,7 @@ export default async function Home() {
             />
             <Anchor
               text="Schedule An Appointment Now"
-              url="https://schedulicity.com/scheduling/CMLB9U/services"
+              url="https://www.schedulicity.com/scheduling/CMLB9U/services"
               newTab={true}
             />
           </div>
