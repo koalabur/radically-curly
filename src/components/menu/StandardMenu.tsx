@@ -79,7 +79,7 @@ export default function StandardMenu() {
             We Rock The Fabric Of Your Hair <sup>®</sup>
           </p>
           <Anchor
-            url="http://www.vagaro.com/cmlb9u"
+            url="https://www.vagaro.com/cmlb9u"
             text="Schedule An Appointment Now"
             newTab={true}
           />

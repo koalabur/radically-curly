@@ -152,7 +152,7 @@ export default async function Home() {
               <li key={index} className={styles["experiences__col-list-item"]}>
                 <Link
                   className={styles["experiences__col-list-item-link"]}
-                  href="http://www.vagaro.com/cmlb9u"
+                  href="https://www.vagaro.com/cmlb9u"
                   target="_blank"
                 >
                   <span>{item}</span>
@@ -181,7 +181,7 @@ export default async function Home() {
             />
             <Anchor
               text="Schedule An Appointment Now"
-              url="http://www.vagaro.com/cmlb9u"
+              url="https://www.vagaro.com/cmlb9u"
               newTab={true}
             />
           </div>

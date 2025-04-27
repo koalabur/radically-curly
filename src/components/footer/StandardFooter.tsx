@@ -100,7 +100,7 @@ export default async function StandardFooter() {
           <div className={styles["StandardFooter__info-col"]}>
             <StandardBusinessInfo styling="footer" />
             <Anchor
-              url="http://www.vagaro.com/cmlb9u"
+              url="https://www.vagaro.com/cmlb9u"
               text="Schedule An Appointment"
               newTab={true}
             />
