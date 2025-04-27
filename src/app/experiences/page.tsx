@@ -266,7 +266,7 @@ export default async function Experiences() {
         <div className={styles.experiences__cta}>
           <Anchor
             text="Schedule An Appointment"
-            url="https://www.schedulicity.com/scheduling/CMLB9U/services"
+            url="https://www.vagaro.com/cmlb9u"
             size="large"
             newTab={true}
           />
